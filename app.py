@@ -9,6 +9,7 @@ After learning the concept in MIT's 18.200A (Applied Discrete Mathematics), I im
 """
 
 n = st.number_input('Number to be Tested', format='%d', value=561)
+num_iter = st.slider(min_value=1, max_value=10, label='Number of Iterations', format='%d', value=3)
 use_small_a = st.checkbox('Small/Predtermined a?', value=True)
 
 if st.button('Calculate!'):
@@ -24,15 +25,10 @@ if st.button('Calculate!'):
     f"Next, we choose some $a$, between 1 and {n-1}."
     prime = True
 
-    for a in range(2, 5):
+    for a in range(2, 2+num_iter+1):
         if not use_small_a:
             a = random.randint(2, n-1)
         f"Let's pick $a = {a}$"
-
-        if n % a == 0:
-            f'{n} is divisible by {a}. It is definitely not prime!'
-            prime = False
-            break
 
         prev = None
         for exp in range(s+1):
