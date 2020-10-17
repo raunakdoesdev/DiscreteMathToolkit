@@ -43,6 +43,9 @@ if st.button('Calculate!'):
                 f"Looking at the last two iterations, we find that ${old_prev}^2 \equiv {prev}$ (mod ${n}$)."
                 prime = False
                 break
+        if prev != 1:
+            f"This number is not prime, as it violates Fermat's Primality Test. $2^{{{n-1}}} \\not \equiv 1$ (mod ${n}$)"
+            prime = False
         if not prime:
             break
         else:
