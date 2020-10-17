@@ -44,7 +44,7 @@ if st.button('Calculate!'):
                 prime = False
                 break
         if prev != 1:
-            f"This number is not prime, as it violates Fermat's Primality Test. $2^{{{n-1}}} \\not \equiv 1$ (mod ${n}$)"
+            f"The residue of $2^{{{n-1}}}$ must be $1$ for ${n}$ to be prime, according to Fermat's Little Theorem."
             prime = False
         if not prime:
             break
